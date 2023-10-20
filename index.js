@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
-const test = require("./utils/generateMarkdown.js")
+const markdown = require("./utils/generateMarkdown.js")
 const fs = require("fs");
 const questions = [
     {
@@ -31,7 +31,15 @@ const questions = [
         type: "list",
         message: "Which License do you wish to use?",
         name: "license",
-        choices: ["MIT License","GNU GPLv3", "Apache License 2.0", "No License"]
+        choices: ["MIT License","BSD 3-Clause License", "Apache License 2.0", "No License"]
+    },
+    {
+        message: "What is your name?",
+        name: "user"
+    },
+    {
+        message: "What year is it?(yyyy format)",
+        name: "year"
     }
 ];
 
@@ -54,7 +62,7 @@ function init() {
 
     .then((answers) => {
         console.log(answers);
-        writeToFile(answers.title, test(answers));
+        writeToFile(answers.title, markdown(answers));
     })
     .catch((error) => {
         if(error.isTtyError){
