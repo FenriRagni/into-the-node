@@ -82,10 +82,21 @@ function generateMarkdown(data) {
   const badge = renderLicenseBadge(data.license);
   const link = renderLicenseLink(data.license);
   const section = renderLicenseSection(data);
+  const upperTitle = data.title.charAt(0).toUpperCase() + data.title.slice(1);
+  
   let page =
-`# ${data.title}
+`# ${upperTitle}
+  ${badge}
  ## Description
   ${data.description}
+
+ ## Table of Contents
+  [Installation](#installation)
+  [Usage Instructions](#usage-instructions)
+  [Contribution Guidelines](#contribution-guidelines)
+  [Test Instructions](#test-instructions)
+  [Questions](#questions)
+  [License](#license)
 
  ## Installation
   ${data.install}
@@ -99,8 +110,13 @@ function generateMarkdown(data) {
  ## Test Instructions
   ${data.tests}
 
+ ## Questions
+  [Github profile](github.com/${data.user})
+  If you have any questions please email me at:
+  ${data.email}
  ## License
-  ${data.license};
+  [${link}](${link})
+  ${section}
 `;
   return page;
 }

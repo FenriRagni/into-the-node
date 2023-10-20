@@ -34,8 +34,12 @@ const questions = [
         choices: ["MIT License","BSD 3-Clause License", "Apache License 2.0", "No License"]
     },
     {
-        message: "What is your name?",
+        message: "What is your gitHub username?",
         name: "user"
+    },
+    {
+        message: "What is your email?",
+        name: "email"
     },
     {
         message: "What year is it?(yyyy format)",
