@@ -8,7 +8,7 @@ const questions = [
         name: "title"
     },
     {
-        message: "Give a small description of your project: ",
+        message: "Give a small description of your project:",
         name: "description"
     },
     {

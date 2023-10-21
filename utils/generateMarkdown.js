@@ -33,7 +33,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   switch(license.license){
     case "MIT License":
-      return `Copyright ${license.year} ${license.user}
+      return `Copyright &copy${license.year} ${license.user}
 
       Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
       
@@ -43,7 +43,7 @@ function renderLicenseSection(license) {
     case "BSD 3-Clause License":
       return `Note: This license has also been called the “New BSD License” or “Modified BSD License”. See also the 2-clause BSD License.
 
-      Copyright ${license.year} ${license.user}
+      Copyright &copy${license.year} ${license.user}
       
       Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
       
@@ -59,7 +59,7 @@ function renderLicenseSection(license) {
       Mastodon
        `;
     case "Apache License 2.0": 
-      return `Copyright ${license.year} ${license.user}
+      return `Copyright &copy${license.year} ${license.user}
 
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
@@ -91,12 +91,12 @@ function generateMarkdown(data) {
   ${data.description}
 
  ## Table of Contents
-  [Installation](#installation)
-  [Usage Instructions](#usage-instructions)
-  [Contribution Guidelines](#contribution-guidelines)
-  [Test Instructions](#test-instructions)
-  [Questions](#questions)
-  [License](#license)
+  [Installation](#installation)<br>
+  [Usage Instructions](#usage-instructions)<br>
+  [Contribution Guidelines](#contribution-guidelines)<br>
+  [Test Instructions](#test-instructions)<br>
+  [Questions](#questions)<br>
+  [License](#license)<br>
 
  ## Installation
   ${data.install}
@@ -112,10 +112,10 @@ function generateMarkdown(data) {
 
  ## Questions
   [Github profile](github.com/${data.user})
-  If you have any questions please email me at:
+  <br>If you have any questions please email me at:
   ${data.email}
  ## License
-  [${link}](${link})
+  [${link}](${link})<br>
   ${section}
 `;
   return page;
